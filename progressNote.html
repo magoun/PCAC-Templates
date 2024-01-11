@@ -1,0 +1,327 @@
+<head>
+	<link rel="stylesheet" href="style.css">
+	<script src="customElements.js"></script>
+	<script src="helpers.js"></script>
+</head>
+<body>
+	<img src="logo.png" alt="PCAC Logo" />
+	<h1>Progress Note</h1>
+	
+	<h2>Client Info</h2>
+
+	<div class="section grid">
+		<div class="inputContainer">
+			<label>Client Name & Progress Note #</label>
+			<input type="text">
+		</div>
+	
+		<div class="inputContainer">
+			<label>Date of Birth</label>
+			<input type="date">
+		</div>
+	
+		<div class="inputContainer">
+			<label>Date of Next Session</label>
+			<input type="date">
+		</div>
+	</div>
+
+	<h2>Session Info</h2>
+
+	<div class="section grid">
+		<div class="inputContainer">
+			<label>Date Recorded</label>
+			<input type="date" id="dateRecorded">
+		</div>
+
+		<div class="inputContainer">
+			<label>Date of Session</label>
+			<input type="date">
+		</div>
+
+		<div class="inputContainer">
+			<label>Provider</label>
+			<input type="text" placeholder="Therapist name & credentials">
+		</div>
+
+		<div class="inputContainer">
+			<label>Start Time</label>
+			<input type="time">
+		</div>
+
+		<div class="inputContainer">
+			<label>End Time</label>
+			<input type="time">
+		</div>
+
+		<div class="inputContainer">
+			<label>Additional Attendees</label>
+			<input type="text">
+		</div>
+
+		<div class="inputContainer">
+			<label>Type of Service</label>
+			<x-dropdown 
+				name="typeOfService" 
+				class="custom" 
+				items="In-Person/In-Office,Phone,Telehealth"
+			></x-dropdown>
+		</div>
+	</div>
+
+	<h2>Clinical Info</h2>
+
+	<div class="section grid">
+		<div class="inputContainer tripleColumn">
+			<label>Functional Status</label>
+			<x-radio-table 
+				class="custom"
+				rows="Current Level of Distress,Impact on Daily Functioning"
+				columns="None,Mild,Moderate,Severe,Extreme"
+			></x-radio-table>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Affect</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Mood Congruent,Mood Incongruent,Labile,Constricted,Flat,Tearful"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Autonomic Observances</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Social,Engaged,Connected,Mobilized,Action-taking,Fight and/or flight,Immobilized,Shut down,Collapsed"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Mood</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Anxious,Agitated,Angry/Irritable,Sad/Depressed,Dysphoric,Elated/Euphoric,Euthymic,Stable"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Orientation</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Alert & Oriented,Not Alert/Oriented,x4 (PPTS),Person,Place,Time,Situation"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Thought Processes</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Linear & Goal-Directed,Tangential,Loose,Flight of Ideas,Circumstantial,Perseverative/Preoccupied,Blocking Beliefs"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Thought Content/Delusions</label>
+			<x-checkbox-list 
+				class="custom"
+				items="None Reported,Persecution,Grandiosity,Reference,Influence,Somatic"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Perceptual Function/Hallucinations</label>
+			<x-checkbox-list 
+				class="custom"
+				items="None Reported,Auditory,Visual,Olfactory,Tactile,Gustatory"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Memory</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Short-Term Intact,Short-Term Impaired,Long-Term Intact,Long-Term Impaired"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Sleep Functioning</label>
+			<x-checkbox-list 
+				class="custom"
+				items="No sleep disturbance,Not feeling rested,Difficulties falling asleep,Waking multiple times,Waking up too early,Nightmares,Sleep paralysis"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer tripleColumn">
+			<label>Impulsivity</label>
+			<x-radio-table 
+				class="custom"
+				rows="Insight & Judgement,Impulse Control"
+				columns="Poor,Limited,Fair,Good,Worsening,Improving"
+			></x-radio-table>
+		</div>
+	
+		<div class="inputContainer tripleColumn">
+			<label>Notes</label>
+			<span class="sublabel">Describe any change from previous functioning and current functioning</span>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	</div>
+
+	<h2>Diagnostic Info</h2>
+
+	<div class="section grid oneColumn">
+		<div class="inputContainer">
+			<label>Diagnostic Assessment</label>
+			<span class="sublabel">Include current diagnoses</span>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Medical Info</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Medications & Changes</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Psychosocial & Environmental Stressors</label>
+			<span class="sublabel">Note change in previous functioning and describe current functioning</span>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Results of Clinical Tests & Assessments</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	</div>
+	
+	<h2>Risk Assessment</h2>
+		
+	<div class="section grid twoColumn">
+		<div class="inputContainer">
+			<label>Level of Risk</label>
+			<x-dropdown 
+				name="levelofRisk" 
+				class="custom" 
+				items="Low,Medium,High,Imminent"
+			></x-dropdown>
+		</div>
+
+		<div class="inputContainer doubleColumn">
+			<!-- <label>No label?</label> -->
+			<x-radio-table 
+				class="custom"
+				rows="Self-Harm,Suicidal Ideation,Homicidal Ideation/Harm to Others"
+				columns="Denied,None Reported,Passive,Active,Intent,Plan,Means"
+			></x-radio-table>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Harm by Others</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Denied,None Reported,Abuse,Neglect,Violence"
+				withOther=false
+			></x-checkbox-list>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Use of Substances</label>
+			<x-checkbox-list 
+				class="custom"
+				items="Denied,None Reported,Infrequent,Some,Moderate,Frequent,Not Assessed"
+				withOther=true
+			></x-checkbox-list>
+		</div>
+		
+		<div class="inputContainer doubleColumn">
+			<label>Comments</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	</div>
+
+	<h2>Goals & Progress</h2>
+
+	<div class="section grid oneColumn">
+		<div class="inputContainer">
+			<label>Progress Toward Target Symptoms/Goals</label>
+			<x-radio-table 
+				class="custom"
+				rows="Goal 1,Goal 2,Goal 3,Goal 4,Goal 5"
+				columns="N/A,-2,-1,N/P,+1,+2"
+				editableRows=true
+			></x-radio-table>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Status of Homework from Last Session</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Interventions & Client's Response</label>
+			<span class="sublabel">Include rationale for choice, client’s response, and any referrals</span>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	</div>
+	
+	<h2>Session Content</h2>
+	<div class="section grid oneColumn">
+		<div class="inputContainer">
+			<label>Presenting Situation, Topics, or Symptoms</label>
+			<span class="sublabel">Identify any new needs or goals, general themes and topics discussed</span>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Plan</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Treatment Provided</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Homework</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Other Important Info</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	
+		<div class="inputContainer">
+			<label>Unusual Circumstances</label>
+			<span class="sublabel">For sessions that veer from the standard in frequency, intensity and duration</span>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
+	</div>
+
+	<h2>Clinician Signature</h2>
+
+	<div class="section signature"></div>
+
+	<div class="printButtons">
+		<button class="no-print" id="hideButton" onclick="hideEmpty()">Hide Empty</button>
+		<button class="no-print" id="showButton" onclick="showAll()" hidden>Show All</button>
+	</div>
+
+
+</body>
