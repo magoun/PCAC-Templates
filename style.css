@@ -1,6 +1,6 @@
 :root {
 	--font-size-h2: 20px;
-	--font-size-sublabel: 16px;
+	/* --font-size-sublabel: 16px; */
 }
 
 body {
@@ -12,8 +12,9 @@ body {
 img {
 	display: block;
 	margin: auto;
-	margin-top: -8rem;
-	margin-bottom: -11rem;
+	margin-top: -7rem;
+	margin-bottom: -10rem;
+	width: 45%;
 }
 
 h1 {
@@ -29,6 +30,12 @@ input[type="text"] {
 	min-width: 12rem;
 }
 
+input[type="checkbox"] {
+	& + label, & + input {
+		padding-left: 3px;
+	}
+}
+
 input, textarea {
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 3px;
@@ -37,6 +44,11 @@ input, textarea {
 textarea {
 	border-radius: 0.5rem;
 	padding: 0.5rem;
+
+	/* Auto-resizing */
+	display: block;
+	overflow: hidden;
+	resize: none;
 }
 
 div.inputContainer {
@@ -52,13 +64,13 @@ div.inputContainer {
 
 	}
 
-	& span.sublabel {
+	/* & span.sublabel {
 		display: block;
 		font-size: var(--font-size-sublabel);
 		font-style: italic;
-		/* margin-bottom: 4px; */
+		margin-bottom: 4px;
 		padding: 4px;
-	}
+	} */
 }
 
 div.grid {
@@ -101,6 +113,10 @@ th {
 	padding: 0.5rem;
 }
 
+tr.hidden {
+	display: none;
+}
+
 .signature {
 	width: 58%;
 	height: 5rem;
@@ -135,9 +151,9 @@ button {
 		font-size: var(--font-size-h2) * 62.5%;
 	}
 
-	div.inputContainer span.sublabel {
+	/* div.inputContainer span.sublabel {
 		font-size: var(--font-size-sublabel) * 62.5%;
-	}
+	} */
 
 	th {
 		font-size: 62.5%;
