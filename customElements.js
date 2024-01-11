@@ -128,7 +128,7 @@ class XRadioTable extends XCustom {
 	makeHTML(rows, columns) {
 		let html = '<table>'
 
-		let editableRows = this.getAttribute('editableRows');editableRows
+		let editableRows = this.getAttribute('editableRows');
 		
 		// Column headers
 		html += '<tr><td>&nbsp;</td>';
@@ -166,6 +166,24 @@ class XRadioTable extends XCustom {
 		}
 
 		return true;
+	}
+
+	hideEmpty() {
+		// We only care about hiding rows for editable rows that aren't filled in
+		if (this.getAttribute('editableRows')) {
+			let rows = this.querySelectorAll('tr');
+			rows.forEach(row => {
+				let input = row.querySelector('input');
+
+				if (input && input.value == '') {
+					row.classList.add('hidden');
+				}
+			});
+		}
+	}
+
+	showAll() {
+		this.querySelectorAll('tr.hidden').forEach(hiddenRow => hiddenRow.classList.remove('hidden'));
 	}
 
 }
