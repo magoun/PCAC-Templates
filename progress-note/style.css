@@ -1,6 +1,5 @@
 :root {
 	--font-size-h2: 20px;
-	/* --font-size-sublabel: 16px; */
 }
 
 body {
@@ -13,7 +12,7 @@ img {
 	display: block;
 	margin: auto;
 	margin-top: -7rem;
-	margin-bottom: -10rem;
+	margin-bottom: -8rem;
 	width: 45%;
 }
 
@@ -64,13 +63,6 @@ div.inputContainer {
 
 	}
 
-	/* & span.sublabel {
-		display: block;
-		font-size: var(--font-size-sublabel);
-		font-style: italic;
-		margin-bottom: 4px;
-		padding: 4px;
-	} */
 }
 
 div.grid {
@@ -115,6 +107,17 @@ th {
 
 tr.hidden {
 	display: none;
+}
+
+x-radio-table[editableRows=true] {
+	& th[scope="row"] {
+		width: 100%;
+		padding-left: 0;
+		
+		& input[type="text"] {
+			width: 100%;
+		}
+	}
 }
 
 .signature {
