@@ -171,10 +171,14 @@
 				columns="Poor,Limited,Fair,Good,Worsening,Improving"
 			></x-radio-table>
 		</div>
+
+		<div class="inputContainer tripleColumn">
+			<label>Strengths / Successes</label>
+			<textarea rows="2" cols="80"></textarea>
+		</div>
 	
 		<div class="inputContainer tripleColumn">
 			<label>Notes</label>
-			<!-- <span class="sublabel">Describe any change from previous functioning and current functioning</span> -->
 			<textarea rows="2" cols="80" placeholder="Describe any change from previous functioning and current functioning"></textarea>
 		</div>
 	</div>
@@ -227,7 +231,7 @@
 			<x-radio-table 
 				class="custom"
 				rows="Self-Harm,Suicidal Ideation,Homicidal Ideation/Harm to Others"
-				columns="Denied,None Reported,Passive,Active,Intent,Plan,Means"
+				columns="None Reported,Passive,Active,Intent,Plan,Means"
 			></x-radio-table>
 		</div>
 	
@@ -235,7 +239,7 @@
 			<label>Harm by Others</label>
 			<x-checkbox-list 
 				class="custom"
-				items="Denied,None Reported,Abuse,Neglect,Violence"
+				items="None Reported,Abuse,Neglect,Violence"
 				withOther=false
 			></x-checkbox-list>
 		</div>
@@ -244,7 +248,7 @@
 			<label>Use of Substances</label>
 			<x-checkbox-list 
 				class="custom"
-				items="Denied,None Reported,Infrequent,Some,Moderate,Frequent,Not Assessed"
+				items="None Reported,Infrequent,Some,Moderate,Frequent,Not Assessed"
 				withOther=true
 			></x-checkbox-list>
 		</div>
@@ -272,12 +276,6 @@
 			<label>Status of Homework from Last Session</label>
 			<textarea rows="2" cols="80"></textarea>
 		</div>
-	
-		<div class="inputContainer">
-			<label>Interventions & Client's Response</label>
-			<!-- <span class="sublabel">Include rationale for choice, client’s response, and any referrals</span> -->
-			<textarea rows="2" cols="80" placeholder="Include rationale for choice, client’s response, and any referrals"></textarea>
-		</div>
 	</div>
 	
 	<h2>Session Content</h2>
@@ -286,6 +284,11 @@
 			<label>Presenting Situation, Topics, or Symptoms</label>
 			<!-- <span class="sublabel">Identify any new needs or goals, general themes and topics discussed</span> -->
 			<textarea rows="2" cols="80" placeholder="Identify any new needs or goals, general themes and topics discussed"></textarea>
+		</div>
+
+		<div class="inputContainer">
+			<label>Interventions & Client's Response</label>
+			<textarea rows="2" cols="80" placeholder="Include rationale for choice, client's response, and any referrals"></textarea>
 		</div>
 	
 		<div class="inputContainer">
