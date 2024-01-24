@@ -29,11 +29,11 @@ input[type="text"] {
 	min-width: 12rem;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
 	& + label, & + input {
 		padding-left: 3px;
 	}
-}
+} */
 
 input, textarea {
 	font-family: Arial, Helvetica, sans-serif;
@@ -116,6 +116,16 @@ x-radio-table[editableRows=true] {
 		
 		& input[type="text"] {
 			width: 100%;
+		}
+	}
+}
+
+x-checkbox-list {
+	& label {
+		display: block;
+
+		&.hidden {
+			display: none;
 		}
 	}
 }

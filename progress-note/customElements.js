@@ -55,13 +55,14 @@ class XCheckboxList extends XCustom {
 		let html = ''
 		
 		items.forEach(item => {
-			html += `<input type="checkbox" name="${item}">`
-			html += `<label for="${item}">${item}</label><br>`;
+			html += `<label><input type="checkbox" /> ${item}</label>`;
 		})
 
 		if (this.getAttribute('withOther')) {
-			html += `<input type="checkbox" name="Other">`
-			html += `<input type="text" placeholder="Other"><br>`;
+			html += '<label>';
+			html += `<input type="checkbox" name="Other" />`;
+			html += `<input type="text" placeholder="Other" />`;
+			html += '</label>';
 		}
 
 		return html;
@@ -78,35 +79,19 @@ class XCheckboxList extends XCustom {
 	}
 
 	hideEmpty() {
-		let hiddenHTML = '';
-		let stateHTML = '';
+		let labels = this.querySelectorAll('label');
 
-		let checkboxes = this.querySelectorAll('input[type="checkbox"]');
+		labels.forEach(label => {
+			let checkbox = label.querySelector('input[type="checkbox"]');
 
-		[...checkboxes].forEach(checkbox => {
-
-			if (checkbox.checked) {
-				var checkedItem = checkbox.outerHTML.replace('>', ' checked>');
-				
-				hiddenHTML += checkedItem;
-				hiddenHTML += checkbox.nextElementSibling.outerHTML;
-				hiddenHTML += '<br>'
+			if (!checkbox.checked) {
+				label.classList.add('hidden');
 			}
-
-			stateHTML += checkbox.checked ? checkedItem : checkbox.outerHTML;
-			stateHTML += checkbox.nextElementSibling.outerHTML;
-			stateHTML += '<br>'
-
-		})
-
-		this.state = stateHTML;
-		this.innerHTML = hiddenHTML;
+		});
 	}
 
 	showAll() {
-		if (this.state) {
-			this.innerHTML = this.state;
-		}
+		this.querySelectorAll('label.hidden').forEach(hiddenLabel => hiddenLabel.classList.remove('hidden'));
 	}
 
 }
