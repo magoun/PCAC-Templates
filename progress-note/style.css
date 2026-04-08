@@ -48,6 +48,9 @@ textarea {
 	display: block;
 	overflow: hidden;
 	resize: none;
+	field-sizing: content;
+	width: 35rem;
+	min-height: 3rem;
 }
 
 div.inputContainer {
